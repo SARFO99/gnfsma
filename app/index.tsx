@@ -60,6 +60,7 @@ const LoginScreen = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Username"
+                placeholderTextColor="gray"
                 value={username}
                 onChangeText={setUsername}
               />
@@ -73,6 +74,8 @@ const LoginScreen = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Password"
+                placeholderTextColor="gray"
+
                 secureTextEntry
                 value={password}
                 onChangeText={setPassword}
@@ -188,6 +191,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     fontSize: 16,
+    color: "black",
+    
   },
   dividerContainer: {
     flexDirection: 'row',

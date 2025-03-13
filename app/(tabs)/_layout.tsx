@@ -14,7 +14,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+         tabBarActiveTintColor: 'white' ,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -44,14 +44,14 @@ export default function TabLayout() {
         name="safety"
         options={{
           title: 'Safety',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.circle.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="triangle.circle.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
         }}
       />
     </Tabs>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -30,44 +31,47 @@ const HomeScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.header}>GHANA NATIONAL FIRE SERVICE</Text>
+    <SafeAreaView style={styles.container}>
+    <ScrollView >
+        <Text style={styles.header}>GHANA NATIONAL FIRE SERVICE</Text>
 
-      <TextInput
-        style={styles.searchInput}
-        placeholder="Search nearby stations...."
-      />
+        <TextInput
+          style={styles.searchInput}
+          placeholderTextColor="gray"
+          placeholder="Search nearby stations...." />
 
-      {/* 2x2 Grid for Buttons */}
-      <View style={styles.gridContainer}>
-
-
-        <ButtonClickGrid text='Emergency contacts' link='emergency'  cl= {colors.emergency}/>
-        <ButtonClickGrid text='Certificate Apply Now' link='certificate' cl= {colors.certificate} />
-        <ButtonClickGrid text='Safety Guidelines' link='safety'  cl= {colors.safety} />
-        <ButtonClickGrid text='Reports History' link='reports'   cl= {colors.reports}/>
+        {/* 2x2 Grid for Buttons */}
+        <View style={styles.gridContainer}>
 
 
-      </View>
+          <ButtonClickGrid text='Emergency contacts' link='emergency' cl={colors.emergency} />
+          <ButtonClickGrid text='Certificate Apply Now' link='certificate' cl={colors.certificate} />
+          <ButtonClickGrid text='Safety Guidelines' link='safety' cl={colors.safety} />
+          <ButtonClickGrid text='Reports History' link='reports' cl={colors.reports} />
 
-      {/* Nearby Fire Stations Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Nearby Fire Stations</Text>
-        <TouchableOpacity style={styles.linkButton}>
-          <Text style={styles.linkText}>View All</Text>
-        </TouchableOpacity>
 
-        <View style={styles.stationItem}>
-          <Text style={styles.stationName}>Accra Central Fire Station 1.2km</Text>
-          <Text style={styles.stationStatus}>Available</Text>
         </View>
 
-        <View style={styles.stationItem}>
-          <Text style={styles.stationName}>Tema Fire Station 3.5km</Text>
-          <Text style={styles.stationStatus}>Busy</Text>
+        {/* Nearby Fire Stations Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Nearby Fire Stations</Text>
+          <TouchableOpacity style={styles.linkButton}>
+            <Text style={styles.linkText}>View All</Text>
+          </TouchableOpacity>
+
+          <View style={styles.stationItem}>
+            <Text style={styles.stationName}>Accra Central Fire Station 1.2km</Text>
+            <Text style={styles.stationStatus}>Available</Text>
+          </View>
+
+          <View style={styles.stationItem}>
+            <Text style={styles.stationName}>Tema Fire Station 3.5km</Text>
+            <Text style={styles.stationStatus}>Busy</Text>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+      
+      </SafeAreaView>
   );
 };
 
@@ -82,6 +86,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',
+    color : 'red'
   },
   searchInput: {
     width: '100%',
