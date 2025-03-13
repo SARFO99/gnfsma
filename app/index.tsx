@@ -11,9 +11,14 @@ import {
   Platform
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 
 
 const LoginScreen = () => {
+
+
+    const navigation = useNavigation<any>();
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -49,7 +54,7 @@ const LoginScreen = () => {
           <View style={styles.inputContainer}>
             <View style={styles.inputWrapper}>
               <Image
-                source={require('../assets/images/logo_main.png')}
+                source={require('../assets/images/profile.png')}
                 style={styles.inputIcon}
               />
               <TextInput
@@ -62,7 +67,7 @@ const LoginScreen = () => {
             
             <View style={styles.inputWrapper}>
               <Image
-                source={require('../assets/images/logo_main.png')}
+                source={require('../assets/images/password.png')}
                 style={styles.inputIcon}
               />
               <TextInput
@@ -105,7 +110,8 @@ const LoginScreen = () => {
             </TouchableOpacity>
           </View>
           
-          <TouchableOpacity style={styles.loginButton}>
+          <TouchableOpacity           onPress={() => navigation.navigate("(tabs)")}
+  style={styles.loginButton}>
             <Text style={styles.loginButtonText}>Sign In</Text>
           </TouchableOpacity>
         </View>
