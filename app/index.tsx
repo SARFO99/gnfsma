@@ -13,7 +13,6 @@ import {
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 
-
 const LoginScreen = () => {
 
 

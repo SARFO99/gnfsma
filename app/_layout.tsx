@@ -29,12 +29,13 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'light' ? DarkTheme : DefaultTheme}>
-      <Stack  screenOptions={{ headerShown: false }}>
+      <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="safety" />
         <Stack.Screen name="certificate" />
-        <Stack.Screen name="reports" />
+        <Stack.Screen name="report" />
+        <Stack.Screen name="ConfirmLocation" /> {/* Ensure this line is present */}
         <Stack.Screen name="emergency" />
       </Stack>
       <StatusBar style="auto" />
